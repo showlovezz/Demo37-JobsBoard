@@ -1,4 +1,7 @@
 <%= form_for @job do |f| %>
+
+	<%= f.label :category, "Category" %>
+	<%= f.collection_select :category_id, Category.all, :id, :name, {prompt: true} %>
 	
 	<%= f.label :title, "Title" %>
 	<%= f.text_field :title %>
