@@ -1,3 +1,24 @@
-<% Category.all.each do |category| %>
-	<%= link_to category.name, jobs_path(category: category.name) %>
-<% end %>
+<nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+  <div class="container">
+    <%= link_to "Rails Jobs", jobs_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">全部工作</a>
+        </li>
+        <% Category.all.each do |category| %>
+          <li class="nav-item">
+            <%= link_to category.name, jobs_path(category: category.name), class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+      <span class="navbar-text">
+        <%= link_to "Create New Jobs", new_job_path, class: "text-color" %>
+      </span>
+    </div>
+  </div>
+</nav>
