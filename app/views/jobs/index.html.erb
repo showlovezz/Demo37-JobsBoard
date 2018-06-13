@@ -9,12 +9,10 @@
 			<%= job.address %>
 			<%= job.people %>
 			<%= job.work_location %>
-			<%= job.image %>
+			<%= image_tag job.image %>
 			<%= link_to "Show", job_path(job) %>
 			<%= link_to "Edit", edit_job_path(job) %>
 			<%= link_to "Delete", job_path(job), method: :delete, data: {confirm: "Are you sure?"} %>
 		</li>
 	</ul>
 <% end %>
-
-<%= link_to "Create New Jobs", new_job_path %>
