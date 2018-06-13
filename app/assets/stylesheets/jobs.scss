@@ -1,3 +1,59 @@
 // Place all the styles related to the jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// #section_job_index {
+// 	.container {
+// 		.row {
+// 			.col-8 {
+// 				.job-item {
+// 					border: 1px solid red;
+// 					margin: 30px 0px 30px 0px ;
+// 					padding-top: 29px;
+// 					padding-bottom: 29px;
+// 					height: 200px;
+// 					.col-5 {
+// 						.img {
+// 							height: 140px;
+// 							width: 140px;
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+#section_job_index{
+	.container{
+		.row{
+			.col-10{
+				ul{
+					margin-top: 70px;
+					.text-none{
+						text-decoration: none;
+					}
+					li{
+						.row{
+							.col-4{
+								.img{
+									height: 140px;
+									width: 140px;
+								}
+							}
+							.col-8{
+								h4{
+									color: #0b663e;
+								}
+								p{
+									margin-bottom: 0;
+									color: #000;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
