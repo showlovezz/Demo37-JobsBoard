@@ -3,17 +3,20 @@
 		<div class="row">
 			<div class="col-10 offset-1">
 				
-				<ul class="list-group li-hover">
+				<ul class="list-group">
 					<% @jobs.each do |job| %>
 						<%= link_to job_path(job), class: "text-none" do %>
-					  	<li class="list-group-item">
+					  	<li class="list-group-item list-group-item-action">
 					  		<div class="row">
-						  		<div class="col-4 align-self-center">
+						  		<div class="col-4">
 						  			<%= image_tag job.image,class: "img rounded mx-auto d-block" %>
 						  		</div>
 						  		<div class="col-8">
 						  			<h4><%= job.title %></h4>
 						  			<p><%= truncate(job.description, length: 170) %></p>
+						  		</div>
+						  		<div class="col-8 offset-4">
+						  			<p class="text-muted"><%= time_ago_in_words(job.created_at) %> ago</p>
 						  		</div>
 					  		</div>
 					  	</li>

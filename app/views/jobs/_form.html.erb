@@ -1,32 +1,56 @@
-<%= form_for @job do |f| %>
+<section id="section_job_form">
+	<div class="container">
+		<div class="rwo">
+			<div class="col-12">
+				
+				<%= form_for @job do |f| %>
+					<div class="form-row">
+						<div class="col-6">
+							<div class="form-group">
+								<div class="custom-file">
+									<%= f.file_field :image, class: "custom-file-input" %>
+									<%= f.label :image, "Image", class: "custom-file-label" %>
+								</div>
+							</div>
+							<div class="form-group">
+								<%= f.label :company, "公司名稱：" %>
+								<%= f.text_field :company, placeholder: "請輸入公司名稱", class: "form-control" %>
+							</div>
+							<div class="form-group">
+								<%= f.label :address, "地址：" %>
+								<%= f.text_field :address, class: "form-control" %>
+							</div>
+							<div class="form-group">
+								<%= f.label :people, "團隊人數：" %>
+								<%= f.text_field :people, class: "form-control" %>
+							</div>
+							<div class="form-group">
+								<%= f.label :description, "描述：" %>
+								<%= f.text_area :description,rows: "8", class: "form-control" %>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<%= f.collection_select :category_id, Category.all, :id, :name, {prompt: true}, class: "form-control" %>
+							</div>
+							<div class="form-group">
+								<%= f.label :title, "職位名稱：" %>
+								<%= f.text_field :title, placeholder: "請輸入職位名稱", class: "form-control" %>
+							</div>
+							<div class="form-group">
+								<%= f.label :url, "相關連結：" %>
+								<%= f.text_field :url, class: "form-control" %>
+							</div>
+							<div class="form-group">
+								<%= f.label :work_location, "工作地點：" %>
+								<%= f.text_field :work_location, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+					<%= f.submit class: "btn btn-success btn-lg" %>
+				<% end %>
 
-	<%= f.label :category, "Category" %>
-	<%= f.collection_select :category_id, Category.all, :id, :name, {prompt: true} %>
-	
-	<%= f.label :title, "Title" %>
-	<%= f.text_field :title %>
-
-	<%= f.label :description, "Description" %>
-	<%= f.text_area :description %>
-
-	<%= f.label :company, "Company" %>
-	<%= f.text_field :company %>
-
-	<%= f.label :url, "Url" %>
-	<%= f.text_field :url %>
-
-	<%= f.label :address, "Address" %>
-	<%= f.text_field :address %>
-
-	<%= f.label :people, "People" %>
-	<%= f.text_field :people %>
-
-	<%= f.label :work_location, "Work_location" %>
-	<%= f.text_field :work_location %>
-
-	<%= f.label :image, "Image" %>
-	<%= f.file_field :image %>
-
-	<%= f.submit %>
-
-<% end %>
+			</div>
+		</div>
+	</div>
+</section>
