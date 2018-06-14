@@ -1,3 +1,4 @@
+// index
 #section_job_index{
 	.container{
 		.row{
@@ -32,6 +33,48 @@
 	}
 }
 
+// form
 #section_job_form{
 	margin-top: 70px;
+}
+
+// show`
+#section_job_show{
+	margin-top: 70px;
+	.container{
+		.row{
+			.col-11{
+				.job-item{
+					background-color: #fff;
+					border-radius: 5px;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					.col-2{
+						img{
+							height: 100px;
+							width: 100px;
+						}
+					}
+					.col-7{
+						h4{
+							color: #0b663e;
+						}
+						p{
+							margin-bottom: 0;
+						}
+					}
+					.col-3{
+						p{
+							i{
+							margin-right: 15px;
+							}
+							.fa-globe{
+								color: #0b663e;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

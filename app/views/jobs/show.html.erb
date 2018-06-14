@@ -1,15 +1,53 @@
-<h1>Show Page</h1>
+<section id="section_job_show">
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-1">
+				<div class="btn-group-vertical" role="group" aria-label="Basic example">
+					<%= link_to "Back", jobs_path, class: "btn btn-info" %>
+					<%= link_to "Edit", edit_job_path(@job), class: "btn btn-info" %>
+					<%= link_to "Delete", job_path, method: :delete, data: {confirm: "Are you sure ?"}, class: "btn btn-danger" %>
+				</div>
+			</div>
+			<div class="col-11">
+				<div class="row job-item">
+					<div class="col-2">
+						<%= image_tag @job.image, class: "img rounded mx-auto d-block" %>
+					</div>
+					<div class="col-7">
+						<h4><%= @job.company %></h4>
+						<p><%= simple_format @job.description %></p>
+					</div>
+					<div class="col-3 align-self-center">
+						<p><i class="fas fa-users"></i><%= @job.people %></p>
+						<p><i class="fas fa-map-marker"></i><%= truncate(@job.address, length: 15) %></p>
+						<p><i class="fa fa-link"></i>
+							<%= link_to @job.url do %>
+								<i class="fas fa-globe"></i>
+							<% end %>
+						</p>
+					</div>
+				</div>
+				<div class="row job-item mt-4">
+					<div class="col-9">
+						<h4><%= @job.title %></h4>
+						<h6><span class="badge badge-pill badge-primary"><%= @job.category.name %></span></h6>
+						<p class="text-muted">
+			        <em><%= time_ago_in_words(@job.created_at) %> ago -</em>
+			      </p>
+			      <ul class="list-group">
+						  <li class="list-group-item list-group-item-info">相關技能要求：</li>
+						  <% @job.skills.each do |skill| %>
+						  	<li class="list-group-item"><%= skill.name %></li>
+						  <% end %>
+						</ul>
+					</div>
+					<div class="col-3 align-self-center">
+						<p><i class="far fa-building"></i><%= @job.work_location %></p>
+					</div>
+				</div>
+			</div>
 
-<%= @job.title %>
-<%= @job.description %>
-<%= @job.company %>
-<%= @job.url %>
-<%= @job.address %>
-<%= @job.people %>
-<%= @job.work_location %>
-<%= @job.image %>
-<% @job.skills.each do |skill| %>
-	<%= skill.name %>
-<% end %>
-
-<%= link_to "Back to Index", jobs_path %>
+		</div>
+	</div>
+</section>
