@@ -13,6 +13,7 @@ class JobsController < ApplicationController
 
 	def new
 		@job = Job.new
+		@job.skills.build
 	end
 
 	def create
@@ -46,7 +47,7 @@ class JobsController < ApplicationController
 	private
 
 	def job_params
-		params.require(:job).permit(:title, :description, :company, :url, :address, :people, :work_location, :image, :category_id)
+		params.require(:job).permit(:title, :description, :company, :url, :address, :people, :work_location, :image, :category_id, skills_attributes: [:id, :name, :_destroy])
 	end
 
 	def find_job

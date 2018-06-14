@@ -45,6 +45,15 @@
 								<%= f.label :work_location, "工作地點：" %>
 								<%= f.text_field :work_location, class: "form-control" %>
 							</div>
+							<h5>Skills：</h5>
+							<div id="skills">
+								<%= f.fields_for :skills do |skill| %>
+									<%= render "skill_fields", f: skill %>
+								<% end %>
+								<div class="add">
+			            <%= link_to_add_association "Add", f, :skills, class: "btn btn-primary btn-sm" %>
+			          </div>
+							</div>
 						</div>
 					</div>
 					<%= f.submit class: "btn btn-success btn-lg" %>

@@ -8,5 +8,8 @@
 <%= @job.people %>
 <%= @job.work_location %>
 <%= @job.image %>
+<% @job.skills.each do |skill| %>
+	<%= skill.name %>
+<% end %>
 
-<%= link_to "Back to Index", jobs_path %> 
+<%= link_to "Back to Index", jobs_path %>
